@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Twitter Feed</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Twitter Widgets JS -->
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<!-- FB SDK -->
+	<div id="fb-root"></div>
+
+    <div id="twitter-timeline">
+    </div>
+    <div>
+    <iframe style="height: 696px;" scrolling="no" marginheight="0" src="http://vinalwidget.com/gallery.php?id=1109177677400961024&amp;vids=9&amp;width=189&amp;margin=4&amp;display_username=1&amp;likes=1&amp;comments=1&amp;revines=1&amp;date=1&amp;description=0&amp;responsive=0&amp;frame=1" frameborder="0" width="609"></iframe>
+	</div>
+	<div id="wall" class="facebookWall"></div>
+	<iframe src="http://snapwidget.com/in/?u=dGhlZGVtb2NyYXRzfGlufDEyNXwzfDN8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3xubw==&ve=010416" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:390px; height:390px"></iframe>
+	
+</body>
+<script type="text/javascript" src="js/twitter_timeline.js"></script>
+
+<script id="headingTpl" type="text/x-jquery-tmpl">
+<h1>${name}<span>on Facebook</span></h1>
+</script>
+
+<script id="feedTpl" type="text/x-jquery-tmpl">
+<li>
+  <img src="${from.picture}" class="avatar" />
+  
+  <div class="status">
+    <h2><a href="http://www.facebook.com/profile.php?id=${from.id}" target="_blank">${from.name}</a></h2>
+    <p class="message">{{html message}}</p>
+    {{if type == "link" }}
+      <div class="attachment">
+        {{if picture}}
+          <img class="picture" src="${picture}" />
+        {{/if}}
+        <div class="attachment-data">
+          <p class="name"><a href="${link}" target="_blank">${name}</a></p>
+          <p class="caption">${caption}</p>
+          <p class="description">${description}</p>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  
+  <p class="meta">${created_time} · 
+  {{if comments}}
+    ${comments.count} Comment{{if comments.count>1}}s{{/if}}
+  {{else}}
+    0 Comments
+  {{/if}} · 
+  {{if likes}}
+    ${likes.count} Like{{if likes.count>1}}s{{/if}}
+  {{else}}
+    0 Likes
+  {{/if}}
+  </p>
+</li>
+</script>
+<script src="js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="js/fbwall.js"></script>
+<script type="text/javascript" src="js/facebook_timeline.js"></script>
+</html>

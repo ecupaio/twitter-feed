@@ -1,0 +1,24 @@
+{
+  "name": "twitter-feed",
+  "version": "1.0.0",
+  "description": "playground for twitter feed api",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecupaio/twitter-feed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecupaio/twitter-feed/issues"
+  },
+  "homepage": "https://github.com/ecupaio/twitter-feed#readme",
+  "devDependencies": {
+    "grunt": "^0.4.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
